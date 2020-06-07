@@ -1,4 +1,5 @@
-import CowListEntry from '.CowListEntry.js';
+import React from "react";
+import CowListEntry from './CowListEntry';
 
 var CowList = ({cowList}) => {
   return (
@@ -11,5 +12,6 @@ var CowList = ({cowList}) => {
     </table>
   )
 };
+
 
 export default CowList;

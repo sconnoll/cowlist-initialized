@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CowList from "CowList"
-import NewCowForm from "NewCowForm"
+import CowList from "./CowList";
+import NewCowForm from "./NewCowForm";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class App extends React.Component {
 
   }
   
-  handleSubmit() {
-
+  handleSubmit(event) {
+    
   }
 
   render() {
@@ -32,7 +32,7 @@ class App extends React.Component {
       </div>
     );
   }
-}
+};
 
 var mountNode = document.getElementById("app");
 ReactDOM.render(<App/>, mountNode);

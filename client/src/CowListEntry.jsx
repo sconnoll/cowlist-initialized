@@ -1,10 +1,11 @@
-
+import React from "react";
 
 class CowListEntry extends React.Component {
-    constructor({cow}) {
-      super({cow});
+    constructor(props) {
+      super(props);
       this.state = {
-        showDescription: false
+        showDescription: false,
+        currentCow: false
       };
       this.handleClick = this.handleClick.bind(this);
     }
@@ -13,7 +14,8 @@ class CowListEntry extends React.Component {
       event.preventDefault();
       var temp = this.state.showDescription;
       this.setState({
-        showDescription: !temp
+        showDescription: !temp, 
+        currentCow: !temp
       })
     }
   
