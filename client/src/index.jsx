@@ -1,10 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CowList from "CowList"
+import NewCowForm from "NewCowForm"
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cows: []
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  componentDidMount() {
+
+  }
+  
+  handleSubmit() {
+
+  }
+
   render() {
     return (
-    <div>Hello World!</div>
+      <div className='container'>
+        <div className='form'>
+          <NewCowForm onSubmit={this.handleSubmit}/>
+        </div>
+        <div className='list'>
+          <CowList cowList={this.state.cows}/>
+        </div>
+      </div>
     );
   }
 }
