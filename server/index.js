@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const router = require('./router');
+const mysql = require('mysql');
 
 
 app.use(morgan);
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 
-app.use('/', router);
+app.use('/api/cows', router);
 
 
 

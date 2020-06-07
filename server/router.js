@@ -1,7 +1,9 @@
 const controller = require('./controller');
 const router = require('express').Router();
 
-router.get('/', controller.get);
+router.get('/api/cows', controller.get);
+
+router.post('/api/cows', controller.post);
 
 
 
