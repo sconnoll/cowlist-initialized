@@ -5,8 +5,8 @@ var CowList = ({cowList}) => {
   return (
     <table className="cow-list">
       <tbody>
-        {cowList.map(cow => (
-          <CowListEntry cow={cow}/>
+        {cowList.map((cow, i) => (
+          <CowListEntry key={i} cow={cow}/>
         ))}
       </tbody>
     </table>

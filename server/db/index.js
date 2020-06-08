@@ -1,6 +1,5 @@
 const mySql = require('mysql');
-const createTables = require('./schema');
-const Promise = require('bluebird');
+//const Promise = require('bluebird');
 
 
 const connection = mySql.createConnection({
@@ -10,12 +9,8 @@ const connection = mySql.createConnection({
     database: 'cows'
 });
 
-const db = Promise.promisifyAll(connection, mySql);
+//const db = Promise.promisifyAll(connection, mySql);
 
-db.connectAsync()
-  .then(() => console.log(`Connected to ${database} database as ID ${db.threadId}`))
-  .then(() => db.queryAsync(`CREATE DATABASE IF NOT EXISTS ${database}`))
-  .then(() => db.queryAsync(`USE ${database}`))
-  .then(() => createTables(db));
+connection.connect();
 
-module.exports = db;
+module.exports = connection;

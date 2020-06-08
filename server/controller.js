@@ -1,13 +1,21 @@
+/************************************
+ * NOT USING THIS FILE RIGHT NOW
+ ************************************
+
+
 const model = require('./model');
 
 module.exports = {
   get: (req, res) => {
+    console.log('get request was made');
     model.getAll(function(err, data) {
-      if (err) {
+      console.log('get request made to database');
+      if (err) {  
+        console.log('error after hitting database', err);
         res.sendStatus(404);
       } else {
-        //TODO might want to change to res.send(data), and then grab the data once the post request response comes back to the client
-        res.render('.././dist/index');
+        console.log('this is the data from get request', data);
+        res.send(data);
       }
     });
   },
@@ -22,3 +30,5 @@ module.exports = {
     });
   }
 }
+
+*/

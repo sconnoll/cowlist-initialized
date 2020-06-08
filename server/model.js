@@ -1,34 +1,19 @@
 const db = require('./db/index');
-const Promise = require('bluebird');
+//const Promise = require('bluebird');
 
-var exports = Promise.promisifyAll(module.exports);
+//var exports = Promise.promisifyAll(module.exports);
 
-exports = {
+module.exports = {
   getAll: function(handleResults) {
-    db.queryAsync(`SELECT cow_name, cow_description FROM cows`)
-      .then((allCows) => {
-        handleResults(null, allCows);
-      })
-      .catch(err => {
-        handleResults(err);
-      })
+    db.query(`SELECT cow_name, cow_description FROM cows;`, handleResults);
   }, 
 
   get: function (body) {
-    db.queryAsync(`SELECT cow_name, cow_description FROM cows WHERE cow_name=${body.name}`)
-      .then((cow) => {
-        handleResults(null, cow);
-      })
-      .catch((err) => {
-        handleResults(err);
-      })
+    db.query(`SELECT cow_name, cow_description FROM cows WHERE cow_name=${body.name};`, handleResults);
   },
 
   create: function(body, handleResults) {
-    db.queryAsync(`INSERT INTO cows (cow_name, cow_description) VALUES (${body.name}, ${body.description}`)
-      .then((data) => {
-        handleResults(null, data);
-      })
+    db.query(`INSERT INTO cows(cow_name,cow_description) VALUES("${body.name}","${body.description}");`, handleResults);
   }, 
 
   update: function(body, handleResults) {

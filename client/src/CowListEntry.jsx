@@ -21,10 +21,10 @@ class CowListEntry extends React.Component {
   
     render () {
       return (
-        <tr className="cow-entry" onClick={(e) => this.handleClick(e)}>
-          <td className="cow-name">{this.props.cow}</td>
-          {this.state.showDescription ? <td className="cow-description">{this.props.cow.description}</td> : null};
-        </tr>
+          <tr className="cow-entry" onClick={(e) => this.handleClick(e)}>
+            <td className="cow-name">{this.props.cow.cow_name}</td>
+            {this.state.showDescription ? <td className="cow-description">{this.props.cow.cow_description}</td> : null}
+          </tr>
       )
     }
   };
